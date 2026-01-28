@@ -25,16 +25,29 @@ allprojects {
 
     dependencyManagement {
         imports {
-            mavenBom "org.springframework.boot:spring-boot-dependencies:4.0.1"
-            mavenBom "org.springframework.boot:spring-boot-starter-webmvc-test:4.0.1"
+            mavenBom 'org.springframework.boot:spring-boot-starter:4.0.1'
+            mavenBom 'org.springframework.boot:spring-boot-dependencies:4.0.1'
+            mavenBom 'org.springframework.boot:spring-boot-starter-webmvc-test:4.0.1'
+            mavenBom 'org.junit.jupiter:junit-jupiter-api:6.0.1'
+
         }
     }
 }
 
+projects{
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        testImplementation 'org.junit.jupiter:junit-jupiter-api'
+    }
+}
+
+// might remove this block(as experiment) in future once app is stable
 subprojects {
     dependencies {
          testImplementation 'org.springframework.boot:spring-boot-starter-test'
          testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
+         testImplementation 'org.junit.jupiter:junit-jupiter-api'
     }
 
     java {
