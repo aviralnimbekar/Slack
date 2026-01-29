@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '4.0.1' apply false
+    id 'io.spring.dependency-management' version '1.1.7' apply false
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+//  This import is to load Junit platform to a non spring boot module,
+//  this can be safely removed if this module is converted to a spring boot module,
+//  as Junit platform is already included in spring-boot-starter-test dependency
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    // Add other dependencies specific to the user module
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
