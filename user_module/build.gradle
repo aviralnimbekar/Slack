@@ -6,9 +6,12 @@ plugins {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api'
+
+//  This import is to load Junit platform to a non spring boot module,
+//  this can be safely removed if this module is converted to a spring boot module,
+//  as Junit platform is already included in spring-boot-starter-test dependency
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
     // Add other dependencies specific to the user module
 }
 
