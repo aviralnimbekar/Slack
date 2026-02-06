@@ -24,6 +24,8 @@ public class UserControllerTest {
     void shouldReturnSuccessResponse_WhenRegisterUserCalled() throws Exception {
 //       Arrange
         UserController userController = new UserController();
+
+
 //        Act
 
 //        mockMvc.perform(post("/api/v1/users/register")
