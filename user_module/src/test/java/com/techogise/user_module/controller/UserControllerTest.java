@@ -21,7 +21,7 @@ public class UserControllerTest {
 //    }
 
     @Test
-    void shouldReturnSuccessResponse_WhenRegisterUserCalled() throws Exception {
+    void shouldReturnSuccessResponse_WhenRegisterUserCalled() throws Exception  {
 //       Arrange
         UserController userController = new UserController();
 
